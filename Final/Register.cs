@@ -39,7 +39,7 @@ namespace Final
             else
             {
                 //need to connect to local database
-                SqlConnection connection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\YS\Documents\db\Techshop.mdf;Integrated Security=True;Connect Timeout=30");
+                SqlConnection connection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\YS\source\repos\Final\Techshop.mdf;Integrated Security=True;Connect Timeout=30");
 
                 //inserts row into table 
                 if (txt_password.Text.Trim().Equals(txt_confirm.Text.Trim()))

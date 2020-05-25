@@ -25,8 +25,7 @@ namespace Final
         {
             try
             {
-                SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\YS\Documents\db\TECHSHOP.MDF;Integrated Security=True;Connect Timeout=30");
-                con.Open();
+                SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\YS\source\repos\Final\Techshop.mdf;Integrated Security=True;Connect Timeout=30"); con.Open();
                 SqlDataAdapter sda = new SqlDataAdapter(query, con);
                 sda.SelectCommand.ExecuteNonQuery();
                 con.Close();
@@ -114,8 +113,7 @@ namespace Final
         //show data(products)
         private void btn_preview_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\YS\Documents\db\TECHSHOP.MDF;Integrated Security=True;Connect Timeout=30");
-            using (con)
+            SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\YS\source\repos\Final\Techshop.mdf;Integrated Security=True;Connect Timeout=30"); using (con)
             {
                 string querySelect = "";
                 con.Open();

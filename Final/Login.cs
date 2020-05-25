@@ -27,8 +27,7 @@ namespace Final
         private void btn_enter_Click(object sender, EventArgs e)
         {   //need to connect to local database
 
-            SqlConnection connection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\YS\Documents\db\Techshop.mdf;Integrated Security=True;Connect Timeout=30");
-            //take rows from table 
+            SqlConnection connection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\YS\source\repos\Final\Techshop.mdf;Integrated Security=True;Connect Timeout=30");            //take rows from table 
             string query = "Select * from Employee where id = '" + txt_id.Text.Trim() + "' and password = '" + txt_password.Text.Trim() + "' ";
             SqlDataAdapter sda = new SqlDataAdapter(query,connection);
             DataTable dataTable = new DataTable();
