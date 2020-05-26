@@ -40,17 +40,23 @@ namespace Final
             {
                 //need to connect to local database
                 SqlConnection connection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\YS\source\repos\Final\Techshop.mdf;Integrated Security=True;Connect Timeout=30");
-
-                //inserts row into table 
-                if (txt_password.Text.Trim().Equals(txt_confirm.Text.Trim()))
+                try
                 {
-                    string queryInsert = "insert into Employee (id,password) values('" + txt_id.Text.Trim() + "','" + txt_password.Text.Trim() + "') ";
-                    SqlDataAdapter sda = new SqlDataAdapter(queryInsert, connection);
-                    DataTable dataTable = new DataTable();
-                    sda.Fill(dataTable);
-                    MessageBox.Show("User added!");
+                    //inserts row into table 
+                    if (txt_password.Text.Trim().Equals(txt_confirm.Text.Trim()))
+                    {
+                        string queryInsert = "insert into Employee (id,password) values('" + txt_id.Text.Trim() + "','" + txt_password.Text.Trim() + "') ";
+                        SqlDataAdapter sda = new SqlDataAdapter(queryInsert, connection);
+                        DataTable dataTable = new DataTable();
+                        sda.Fill(dataTable);
+                        MessageBox.Show("User added!");
+                    }
+                    else MessageBox.Show("Passwords should be equal!");
                 }
-                else MessageBox.Show("Passwords should be equal!");
+                catch
+                {
+                    MessageBox.Show("This id is already taken");
+                }
             }
         }
     }
